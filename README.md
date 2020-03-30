@@ -42,3 +42,9 @@ Refer to the the [lab submission instructions](../../../reference/submission-ins
 - findByToken method
 - ensureAuth middleware (cookie-parser)
 - verify route
+
+## Rubric
+User model 3 points
+signup route 3 points
+login route 3 points
+verify route 1 point
