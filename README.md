@@ -32,3 +32,13 @@ A user should be able to verify that they have signed in already.
 ## Assignment Submission Instructions
 
 Refer to the the [lab submission instructions](../../../reference/submission-instructions/labs/README.md) for the complete lab submission process and expectations
+
+## Steps
+- hash password with virtual
+- create auth token with jwt
+- signup route
+- authenticate method
+- login route
+- findByToken method
+- ensureAuth middleware (cookie-parser)
+- verify route
