@@ -22,40 +22,40 @@ describe('auth routes', () => {
   it('signs up a user', () => {
     return request(app)
       .post('/api/v1/auth/signup')
-      .send({ username: 'spot', password: 'spotWasHere' })
+      .send({ username: 'dakotaForever', password: 'superstar' })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          username: 'spot',
+          username: 'dakotaForever',
           __v: 0
         });
       });
   });
 
   it('logs in a user', async() => {
-    await User.create({ username: 'spot', password: 'spotWasHere' });
+    await User.create({ username: 'dakotaForever', password: 'superstar' });
 
     return request(app)
       .post('/api/v1/auth/login')
-      .send({ username: 'spot', password: 'spotWasHere' })
+      .send({ username: 'dakotaForever', password: 'superstar' })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          username: 'spot',
+          username: 'dakotaForever',
           __v: 0
         });
       });
   });
 
   it('fails to login a user with bad password', async() => {
-    await User.create({ username: 'spot', password: 'spotWasHere' });
+    await User.create({ username: 'dakotaForever', password: 'superstar' });
 
     return request(app)
       .post('/api/v1/auth/login')
-      .send({ username: 'spot', password: 'badPassword!oops' })
+      .send({ username: 'dakotaForever', password: 'crapppp' })
       .then(res => {
         expect(res.body).toEqual({
-          message: 'Invalid username/password',  // because we send a bad password
+          message: 'Invalid username/password',  
           status: 403
         });
       });
